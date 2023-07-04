@@ -6,7 +6,7 @@ import {useFetching} from "../hooks/useFetching";
 import NoteService from "../API/NoteService";
 import User from "../components/User";
 
-const Note = (create) => {
+const Note = () => {
 
     const params = useParams()
     const navigate = useNavigate()

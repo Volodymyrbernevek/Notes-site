@@ -1,5 +1,5 @@
 
-import {BrowserRouter, Routes, Route, Switch, Redirect, Navigate} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
 import AppRouter from "./components/AppRouter";
 import {AuthContext} from "./context";
@@ -25,12 +25,7 @@ function App() {
           isLoading
       }}>
           <BrowserRouter>
-
               <AppRouter/>
-
-
-
-
           </BrowserRouter>
       </AuthContext.Provider>
   );

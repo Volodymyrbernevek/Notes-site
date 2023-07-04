@@ -1,7 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {Link} from "react-router-dom";
 import {AuthContext} from "../context";
-import axios from "axios";
 import {useFetching} from "../hooks/useFetching";
 import UserService from "../API/UserService";
 

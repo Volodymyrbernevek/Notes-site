@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 import {useFetching} from "../hooks/useFetching";
 import UserService from "../API/UserService";
-import header from "../components/Header";
 import {AuthContext} from "../context";
 
 const UserData = () => {
@@ -50,33 +49,6 @@ const UserData = () => {
             {username: form.name, firstName: form.first, lastName: form.last, email: form.email, phone: form.phone})
         console.log(user.data)
     })
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Відправка запиту на сервер для авторизації з використанням Axios
-        axios
-            .put('http://localhost:50100/user/'+localStorage.getItem('user_id'),{
-
-                'username': form.name,
-                'firstName': form.first,
-                'lastName': form.last,
-                'email': form.email,
-                'phone': form.phone
-
-            },{
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`
-                }})
-            .then((response) => {
-                // Отримання та збереження JWT токена у localStorage або cookies
-                console.log(response.data)
-                // navigate('/main');
-            })
-            .catch((error) => {
-                console.log('Помилка авторизації:', error.response.data);
-            });
-    };
 
     useEffect(()=>{
         fetchUser()

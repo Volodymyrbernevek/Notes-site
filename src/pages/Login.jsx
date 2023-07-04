@@ -1,10 +1,8 @@
 import React, {useContext, useState} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import axios from "axios";
-import { useNavigation } from 'react-router-dom';
 import {AuthContext} from "../context";
 import {useFetching} from "../hooks/useFetching";
-import NoteService from "../API/NoteService";
 import UserService from "../API/UserService";
 
 

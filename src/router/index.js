@@ -10,7 +10,6 @@ import Registration from "../pages/Registration";
 export const privateRoutes = [
     {path: '/main', component: <Main/>, exact: true},
     {path: '/error', component: <Error/>, exact: true},
-    // {path: '/login', component: <Login/>, exact: true},
     {path: '/note/:id', component: <Note/>, exact: true},
     {path: '/user_data', component: <UserData/>, exact: true},
 ]

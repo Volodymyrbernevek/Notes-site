@@ -1,5 +1,4 @@
 import axios from "axios";
-import header from "../components/Header";
 
 export default class NoteService {
     static async getMyNotes(id) {

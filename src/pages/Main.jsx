@@ -6,16 +6,12 @@ import Notes from "../components/Notes";
 import {Link} from "react-router-dom";
 import {useFetching} from "../hooks/useFetching";
 import PostService from "../API/NoteService";
-import {useNavigate} from "react-router-dom"
 import NoteService from "../API/NoteService";
 const Main = () => {
 
     const [myNotes, setMyNotes] = useState([])
     const [availableNotes, setAvailableNotes] = useState([])
 
-
-
-    const navigate = useNavigate()
 
     const [fetchmyNotes, mynotesError] = useFetching(async () => {
         const notes = await PostService.getMyNotes(localStorage.getItem('user_id'))
@@ -60,16 +56,10 @@ const Main = () => {
                             </h2>
                             <div className="store__body body-store">
                                 <Link to=''  onClick={createNote} className="create_note">New note</Link>
-                                {/*<div className="body-store__header">*/}
-                                {/*    <div className="body-store__title">MY NOTES</div>*/}
-                                {/*</div>*/}
                                 <div className="body-store__items">
                                     {myNotes.map((note) =>
-
                                         <Notes  name={note.name} id ={note.note_id} key={note.note_id}/>
-
                                     )}
-
                                 </div>
                             </div>
                             <h2 className="store__title title">
@@ -78,7 +68,6 @@ const Main = () => {
                             <div className="body-store__items">
                                 {availableNotes.map((note) =>
                                     <Notes  name={note.name} id={note.note_id} key={note.id}/>
-
                                 )}
                             </div>
                         </div>
