@@ -1,6 +1,5 @@
 import React, {useContext, useState} from 'react';
 import {Link} from "react-router-dom";
-import axios from "axios";
 import {AuthContext} from "../context";
 import {useFetching} from "../hooks/useFetching";
 import UserService from "../API/UserService";
@@ -33,29 +32,6 @@ const Login = () => {
         localStorage.setItem('username', response.data.username)
 
     })
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Відправка запиту на сервер для авторизації з використанням Axios
-        axios
-            .post('http://localhost:50100/login', { username, password })
-            .then((response) => {
-                // Отримання та збереження JWT токена у localStorage або cookies
-                const token = response.data.token;
-                console.log(token)
-                setIsAuth(true)
-                localStorage.setItem('token', token);
-                localStorage.setItem('user_id', response.data.id)
-                localStorage.setItem('username', response.data.username)
-
-
-                // navigate('/main');
-            })
-            .catch((error) => {
-                console.log('Помилка авторизації:', error.response.data);
-            });
-    };
-
 
     return (
         <div>

@@ -6,7 +6,6 @@ import Note from "../pages/Note";
 import UserData from "../pages/UserData";
 import Registration from "../pages/Registration";
 
-
 export const privateRoutes = [
     {path: '/main', component: <Main/>, exact: true},
     {path: '/error', component: <Error/>, exact: true},

@@ -3,13 +3,8 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import {privateRoutes, publicRoutes} from "../router";
 import {AuthContext} from "../context";
 
-
 const AppRouter = () => {
     const {isAuth} = useContext(AuthContext);
-
-    // if (isLoading) {
-    //     return <div>Йде загрузка</div>
-    // }
 
     return (
         isAuth
@@ -27,7 +22,6 @@ const AppRouter = () => {
             </Routes>
             :
             <Routes>
-                {/*<Route path="/log" element={Login}/>*/}
                 {publicRoutes.map(route =>
                     <Route
 
